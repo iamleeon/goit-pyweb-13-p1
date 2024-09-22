@@ -1,0 +1,6 @@
+.env
+.DS_Store
+.idea
+__pycache__
+migrations/__pycache__
+src/__pycache__
