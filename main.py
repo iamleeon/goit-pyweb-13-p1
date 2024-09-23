@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi_limiter import FastAPILimiter
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.routes import contacts, auth
+from src.routes import contacts, auth, users
 from src.conf.config import settings
 
 import redis.asyncio as redis
@@ -20,6 +20,7 @@ origins = [
 
 app.include_router(auth.router, prefix='/api')
 app.include_router(contacts.router, prefix='/api')
+app.include_router(users.router, prefix='/api')
 
 app.add_middleware(
     CORSMiddleware,
