@@ -4,10 +4,11 @@ from sqlalchemy.orm import sessionmaker
 import psycopg2
 import os
 from dotenv import load_dotenv
+from src.conf.config import settings
 
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+SQLALCHEMY_DATABASE_URL = settings.sqlalchemy_database_url
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
